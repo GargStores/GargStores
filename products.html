@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products - Garg General Store</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">Garg General Store</div>
+
+    <!-- MENU ICON (MOBILE) -->
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <!-- LINKS -->
+    <ul class="nav-links" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <!-- RIGHT SIDE -->
+    <div class="nav-right">
+
+        <!-- SEARCH -->
+        <input type="text" placeholder="Search..." class="search-box">
+
+        <!-- CART ICON -->
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- 🛒 CART BOX -->
+<div id="cart-box" class="cart-box">
+    <h3>Your Cart</h3>
+
+    <div id="cart-items"></div>
+
+    <!-- 🎁 Coupon -->
+    <div style="margin-top:10px;">
+        <input type="text" id="coupon" placeholder="Enter Coupon Code" style="width:70%; padding:6px;">
+        <button onclick="applyCoupon()">Apply</button>
+    </div>
+
+    <p id="discount-text" style="color:green; font-size:12px;"></p>
+
+    <h4>Total: ₹<span id="total">0</span></h4>
+
+    <button onclick="checkout()">Proceed to WhatsApp</button>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products">
+    <h2 class="section-title">All Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="item1.jpg" alt="Rice">
+            <h3>Rice</h3>
+            <p>₹50</p>
+
+            <div class="qty">
+                <button onclick="changeQty(this,-1)">-</button>
+                <span>1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+
+            <div class="btn-group">
+                <button onclick="addToCart('Rice',50,this)">Add</button>
+                <button onclick="orderNow('Rice',50,this)">Buy</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="item2.jpg" alt="Cold Drink">
+            <h3>Cold Drink</h3>
+            <p>₹40</p>
+
+            <div class="qty">
+                <button onclick="changeQty(this,-1)">-</button>
+                <span>1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+
+            <div class="btn-group">
+                <button onclick="addToCart('Cold Drink',40,this)">Add</button>
+                <button onclick="orderNow('Cold Drink',40,this)">Buy</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="item3.jpg" alt="Biscuits">
+            <h3>Biscuits</h3>
+            <p>₹20</p>
+
+            <div class="qty">
+                <button onclick="changeQty(this,-1)">-</button>
+                <span>1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+
+            <div class="btn-group">
+                <button onclick="addToCart('Biscuits',20,this)">Add</button>
+                <button onclick="orderNow('Biscuits',20,this)">Buy</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="item4.jpg" alt="Cooking Oil">
+            <h3>Cooking Oil</h3>
+            <p>₹150</p>
+
+            <div class="qty">
+                <button onclick="changeQty(this,-1)">-</button>
+                <span>1</span>
+                <button onclick="changeQty(this,1)">+</button>
+            </div>
+
+            <div class="btn-group">
+                <button onclick="addToCart('Cooking Oil',150,this)">Add</button>
+                <button onclick="orderNow('Cooking Oil',150,this)">Buy</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
